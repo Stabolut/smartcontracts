@@ -498,7 +498,7 @@ contract Usb is ERC20, IERC865, Ownable {
     using SafeMath for uint256;
 
     string public constant symbol = "USB";
-    string public constant name = "USB";
+    string public constant name = "Stabolut USB";
     uint8 public constant decimals = 2;
 
     /**
