@@ -347,13 +347,12 @@ contract ERC20 is IERC20 {
      * @param account The account whose tokens will be burnt.
      * @param value The amount that will be burnt.
      */
-    function _burn(address account, uint256 value) internal returns (bool) {
+    function _burn(address account, uint256 value) internal {
         require(account != address(0));
 
         _totalSupply = _totalSupply.sub(value);
         _balances[account] = _balances[account].sub(value);
         emit Transfer(account, address(0), value);
-        return true;
     }
 
     /**
@@ -836,6 +835,8 @@ contract Usb is ERC20, IERC865, Ownable {
 
         return (hashedParams, from, hashedTx);
     }
+
+
 
     /**
      * @dev Hash (keccak256) of the payload used by approvePreSigned
