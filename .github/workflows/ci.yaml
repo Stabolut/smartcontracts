@@ -22,13 +22,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: smartcontracts/package.json
 
       - name: Install Dependencies
-        working-directory: smartcontracts
         run: npm install
 
       - name: Compile Contracts with Hardhat
-        working-directory: smartcontracts
         run: npx hardhat compile
